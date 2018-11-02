@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Insert title here</title>
+</head>
+<body>
+<form action="receive_handle.jsp" method="POST"> 
+		姓名：<INPUT TYPE="TEXT" NAME="USERNAME"><BR>
+		密码：<INPUT TYPE="PASSWORD" NAME="USERPWD"><BR>
+		性别：
+		<INPUT TYPE="RADIO" NAME="SEX" VALUE="男">男
+		<INPUT TYPE="RADIO" NAME="SEX" VALUE="女">女 <BR>
+		血型：
+		<INPUT TYPE="RADIO" NAME="BLOOD" VALUE="O">O
+		<INPUT TYPE="RADIO" NAME="BLOOD" VALUE="A">A
+		<INPUT TYPE="RADIO" NAME="BLOOD" VALUE="B">B
+		<INPUT TYPE="RADIO" NAME="BLOOD" VALUE="AB">AB <BR>
+		爱好：
+		<INPUT TYPE="CHECKBOX" Name="CHATACTER" VALUE="篮球">篮球
+		<INPUT TYPE="CHECKBOX" Name="CHATACTER" VALUE="足球">足球
+		<INPUT TYPE="CHECKBOX" Name="CHATACTER" VALUE="乒乓球">乒乓球
+		<BR>
+		简介：
+		<TEXTAREA ROWS="8" COLS="30" NAME="MEMO"></TEXTAREA><BR>
+		城市：<SELECT SIZE="1" NAME="CITY">
+		<OPTION VALUE="郑州">郑州市</OPTION>
+		<OPTION VALUE="洛阳">洛阳市</OPTION>
+		<OPTION VALUE="驻马店">驻马店市</OPTION>
+		</SELECT><BR>
+		<INPUT TYPE="SUBMIT" VALUE="提交">
+		<INPUT TYPE="RESET" VALUE="RESET">
+	</form>
+</body>
+</html>

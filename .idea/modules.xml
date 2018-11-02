@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/WebDemo_WithGradle.iml" filepath="$PROJECT_DIR$/.idea/modules/WebDemo_WithGradle.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/WebDemo_WithGradle_main.iml" filepath="$PROJECT_DIR$/.idea/modules/WebDemo_WithGradle_main.iml" group="WebDemo_WithGradle" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/WebDemo_WithGradle_test.iml" filepath="$PROJECT_DIR$/.idea/modules/WebDemo_WithGradle_test.iml" group="WebDemo_WithGradle" />
+    </modules>
+  </component>
+</project>
