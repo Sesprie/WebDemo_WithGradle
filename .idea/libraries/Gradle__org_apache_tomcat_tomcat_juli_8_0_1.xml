@@ -1,11 +1,11 @@
 <component name="libraryTable">
   <library name="Gradle: org.apache.tomcat:tomcat-juli:8.0.1">
     <CLASSES>
-      <root url="jar://$PROJECT_DIR$/../../../../../ProgramData/assign_environment_variables/gradle-4.7-complete/caches/modules-2/files-2.1/org.apache.tomcat/tomcat-juli/8.0.1/e45d622f77a08933e81f829829859981b50204fe/tomcat-juli-8.0.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../../../../ProgramData/ENV_VAR/gradle-4.7-complete/caches/modules-2/files-2.1/org.apache.tomcat/tomcat-juli/8.0.1/e45d622f77a08933e81f829829859981b50204fe/tomcat-juli-8.0.1.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>
-      <root url="jar://$PROJECT_DIR$/../../../../../ProgramData/assign_environment_variables/gradle-4.7-complete/caches/modules-2/files-2.1/org.apache.tomcat/tomcat-juli/8.0.1/360667a8f1932e6216985d4874b6a7cfbfbd7bc2/tomcat-juli-8.0.1-sources.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../../../../ProgramData/ENV_VAR/gradle-4.7-complete/caches/modules-2/files-2.1/org.apache.tomcat/tomcat-juli/8.0.1/360667a8f1932e6216985d4874b6a7cfbfbd7bc2/tomcat-juli-8.0.1-sources.jar!/" />
     </SOURCES>
   </library>
 </component>

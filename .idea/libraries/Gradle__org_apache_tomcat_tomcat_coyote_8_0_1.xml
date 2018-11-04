@@ -1,11 +1,11 @@
 <component name="libraryTable">
   <library name="Gradle: org.apache.tomcat:tomcat-coyote:8.0.1">
     <CLASSES>
-      <root url="jar://$PROJECT_DIR$/../../../../../ProgramData/assign_environment_variables/gradle-4.7-complete/caches/modules-2/files-2.1/org.apache.tomcat/tomcat-coyote/8.0.1/bb20a63a63d59f8fd1b5ba571efcc4810e5989ee/tomcat-coyote-8.0.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../../../../ProgramData/ENV_VAR/gradle-4.7-complete/caches/modules-2/files-2.1/org.apache.tomcat/tomcat-coyote/8.0.1/bb20a63a63d59f8fd1b5ba571efcc4810e5989ee/tomcat-coyote-8.0.1.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>
-      <root url="jar://$PROJECT_DIR$/../../../../../ProgramData/assign_environment_variables/gradle-4.7-complete/caches/modules-2/files-2.1/org.apache.tomcat/tomcat-coyote/8.0.1/96f93d83f72c468e0ed7f8f46ffeb1e54b42848c/tomcat-coyote-8.0.1-sources.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../../../../ProgramData/ENV_VAR/gradle-4.7-complete/caches/modules-2/files-2.1/org.apache.tomcat/tomcat-coyote/8.0.1/96f93d83f72c468e0ed7f8f46ffeb1e54b42848c/tomcat-coyote-8.0.1-sources.jar!/" />
     </SOURCES>
   </library>
 </component>

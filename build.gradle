@@ -13,8 +13,11 @@ repositories {
 }
 
 dependencies {
-    testCompile group: 'junit', name: 'junit', version: '4.11'
-    testCompile group: 'junit', name: 'junit', version: '4.12'
+    // https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api
+    compile group: 'javax.servlet', name: 'javax.servlet-api', version: '3.0.1'
+    //如果报错可以把providedCompile/compile换着用
+
+
     // https://mvnrepository.com/artifact/javax.servlet/jstl
     compile group: 'javax.servlet', name: 'jstl', version: '1.2'
     // https://mvnrepository.com/artifact/org.apache.tomcat/tomcat-catalina
@@ -24,9 +27,4 @@ dependencies {
     //如果直接使用一行代码来定位，下次可以直接下载即可，
     // https://mvnrepository.com/artifact/org.apache.tomcat/jasper
     providedCompile group: 'org.apache.tomcat', name: 'jasper', version: '6.0.32'
-    // https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api
-    compile group: 'javax.servlet', name: 'javax.servlet-api', version: '3.0.1'
-    //如果报错可以把providedCompile/compile换着用
-
-
 }

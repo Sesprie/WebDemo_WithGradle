@@ -1,7 +1,7 @@
 <component name="libraryTable">
   <library name="Gradle: org.apache.tomcat:annotations-api:6.0.32">
     <CLASSES>
-      <root url="jar://$PROJECT_DIR$/../../../../../ProgramData/assign_environment_variables/gradle-4.7-complete/caches/modules-2/files-2.1/org.apache.tomcat/annotations-api/6.0.32/46e1b2746fde5dfd4bb6723c94bf124836230139/annotations-api-6.0.32.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../../../../ProgramData/ENV_VAR/gradle-4.7-complete/caches/modules-2/files-2.1/org.apache.tomcat/annotations-api/6.0.32/46e1b2746fde5dfd4bb6723c94bf124836230139/annotations-api-6.0.32.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

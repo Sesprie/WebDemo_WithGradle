@@ -17,7 +17,7 @@
         <table border="1" width="600px" cellpadding="0" cellspacing="0" align="center">
             <tr>
                 <td height="30" align="center">用户名:</td>
-                <td>&nbsp;&nbsp;<input type="text" name="username"/>${errorMsg}</td>
+                <td>&nbsp;&nbsp;<input type="text" name="username"/><span style="color:red;">${errorMsg}</span></td>
             </tr>
 
             <tr>

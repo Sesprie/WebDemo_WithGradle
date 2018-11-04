@@ -1,7 +1,7 @@
 <component name="libraryTable">
   <library name="Gradle: org.apache.tomcat:jsp-api:6.0.32">
     <CLASSES>
-      <root url="jar://$PROJECT_DIR$/../../../../../ProgramData/assign_environment_variables/gradle-4.7-complete/caches/modules-2/files-2.1/org.apache.tomcat/jsp-api/6.0.32/a593acca66a206c996b21d91edca20dcd0ba3013/jsp-api-6.0.32.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../../../../ProgramData/ENV_VAR/gradle-4.7-complete/caches/modules-2/files-2.1/org.apache.tomcat/jsp-api/6.0.32/a593acca66a206c996b21d91edca20dcd0ba3013/jsp-api-6.0.32.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

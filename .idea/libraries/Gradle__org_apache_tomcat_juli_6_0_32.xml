@@ -1,7 +1,7 @@
 <component name="libraryTable">
   <library name="Gradle: org.apache.tomcat:juli:6.0.32">
     <CLASSES>
-      <root url="jar://$PROJECT_DIR$/../../../../../ProgramData/assign_environment_variables/gradle-4.7-complete/caches/modules-2/files-2.1/org.apache.tomcat/juli/6.0.32/f7fdf8c4cb1310d3af0fdfd0d33434c8da4c97d1/juli-6.0.32.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../../../../ProgramData/ENV_VAR/gradle-4.7-complete/caches/modules-2/files-2.1/org.apache.tomcat/juli/6.0.32/f7fdf8c4cb1310d3af0fdfd0d33434c8da4c97d1/juli-6.0.32.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />

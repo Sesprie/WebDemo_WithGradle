@@ -1,11 +1,11 @@
 <component name="libraryTable">
   <library name="Gradle: org.apache.tomcat:tomcat-jni:8.0.1">
     <CLASSES>
-      <root url="jar://$PROJECT_DIR$/../../../../../ProgramData/assign_environment_variables/gradle-4.7-complete/caches/modules-2/files-2.1/org.apache.tomcat/tomcat-jni/8.0.1/8f873ef805dbd5833a66a8a0e97e2633a3ffd9af/tomcat-jni-8.0.1.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../../../../ProgramData/ENV_VAR/gradle-4.7-complete/caches/modules-2/files-2.1/org.apache.tomcat/tomcat-jni/8.0.1/8f873ef805dbd5833a66a8a0e97e2633a3ffd9af/tomcat-jni-8.0.1.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>
-      <root url="jar://$PROJECT_DIR$/../../../../../ProgramData/assign_environment_variables/gradle-4.7-complete/caches/modules-2/files-2.1/org.apache.tomcat/tomcat-jni/8.0.1/33cade62db8c19da420951f916118021bcc2e09/tomcat-jni-8.0.1-sources.jar!/" />
+      <root url="jar://$PROJECT_DIR$/../../../../../ProgramData/ENV_VAR/gradle-4.7-complete/caches/modules-2/files-2.1/org.apache.tomcat/tomcat-jni/8.0.1/33cade62db8c19da420951f916118021bcc2e09/tomcat-jni-8.0.1-sources.jar!/" />
     </SOURCES>
   </library>
 </component>
