@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+        window.onload = function () {
+
+
+            //为每个li添加点击事件
+            var lis = document.getElementsByTagName("li");
+            for(var i = 0; i < lis.length; i++){
+                lis[i].onclick = hello;//这里是传引用，如果直接写alert("hello");那么就算不点击按钮事件也会执行，因为在赋值的时候函数体就执行了，如果写成hello()就相当于赋值的时候就执行了，也不可以
+                /*lis[i].onclick = function(){
+                    //this为当前响应事件的节点
+                    alert(this.firstChild.nodeValue);
+                }*/
+
+                //这种写法是错误的，因为在赋值的时候i确实是对应的数字，但是该循环结束之后，i的值变成了lis.length+1，当点击的时候lis[lis.length+1]并不存在
+                // alert(lis[i].firstChild.nodeValue);
+
+            }
+            function hello(){
+                //this为当前响应事件的节点
+                alert(this.firstChild.nodeValue);
+            }
+
+            var btn = document.getElementsByTagName("button")[0];
+            btn.onclick = function () {
+                //弹出当前节点的内容
+                alert(btn.textContent);
+
+                //替换input的内容
+                var username = document.getElementById("username");
+                username.value = "修改后的内容";
+
+                //获取#ul1的所有子节点的数量
+                var ul1 = document.getElementById("ul1");
+                var liNodes = ul1.getElementsByTagName("li");
+
+                alert("#ul1 子节点的数量为:" + liNodes.length);
+                //这种方式获取到的节点不实用，节点包括li与li之间的空格，只有<li></li>与<li></li>紧密相连，获取到的数量才为3
+                alert("使用ul1.childNodes.length方式获取到的#ul1的节点(包含li之间的空格)数量为:" + ul1.childNodes.length);
+                //这里获取到的第一个子节点为空，因为li与ul之间包含空格，空格也算作节点
+                 alert("ul1.lastChild.textContent:"+ul1.lastChild.textContent);
+               /* alert("ul1.lastChild.nodeValue:" + ul1.lastChild.nodeValue);//nodeValue好像不管用了*/
+                alert("ul1.firstChild.textContent:" + ul1.firstChild.textContent);//删除ul与第一个li之间的空格
+                //貌似通过document.getElementById()的方式获取到的节点使用.firstChild.nodeValue的方式才有效
+
+
+
+
+
+            }
+
+
+        }
+
+    </script>
+</head>
+<body>
+<!--弹出当前节点的内容      this-->
+<button>button的内容</button>
+<input type="text" value="placeholder" id="username"/>
+<ul id="ul1"><li>龙门石窟</li>
+    <li>洛阳牡丹</li>
+    <li>广东韶关丹霞山</li>
+</ul>
+</body>
+</html>

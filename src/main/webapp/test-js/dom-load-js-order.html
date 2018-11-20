@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Title</title>
+    <script type="text/javascript">
+        alert("1");
+
+        //html文档加载完成后执行
+        window.onload = function() {
+            alert("3");
+        }
+    </script>
+</head>
+<!--测试脚本执行顺序-->
+<body>
+
+</body>
+</html>
+
+<script type="text/javascript">
+    alert("2");
+
+</script>

@@ -1,9 +1,0 @@
-<component name="libraryTable">
-  <library name="Gradle: org.apache.tomcat:servlet-api:6.0.32">
-    <CLASSES>
-      <root url="jar://$PROJECT_DIR$/../../../../../ProgramData/ENV_VAR/gradle-4.7-complete/caches/modules-2/files-2.1/org.apache.tomcat/servlet-api/6.0.32/e72fc3f4d7c1b268b70784f240dc180f1221569e/servlet-api-6.0.32.jar!/" />
-    </CLASSES>
-    <JAVADOC />
-    <SOURCES />
-  </library>
-</component>

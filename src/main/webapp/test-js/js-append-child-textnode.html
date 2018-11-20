@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+
+    <script type="text/javascript">
+
+
+        window.onload = function () {
+            var bt_1 = document.getElementById("bt_1");
+
+            function showSmileSuffix() {
+                //利用正则，添加删除字符串
+                //'//g'包裹正则表达式，^表示开头，\^{2}表示匹配两个^，\表示对^进行转义，^不再表示开头
+                var reg = /^\^_\^/g;
+                var val = this.textContent;
+                /*       var val = this.firstChild.nodeValue;*/
+                if (reg.test(val)) {
+                    //使用replace和正则去除^^
+                    val = val.replace(reg, "");
+                    /*this.textContent = this.textContent.replace("^_^","");*/
+                } else {
+                    val = "^_^" + val;
+                }
+                this.textContent = val;
+            }
+
+            var lis = document.getElementsByTagName("li");
+            for (var i = 0; i < lis.length; i++) {
+                lis[i].onclick = showSmileSuffix;
+            }
+
+
+            bt_1.onclick = function () {
+
+
+                var typesNode = document.getElementsByName("type");
+                var valueNode = null;
+                for (var i = 0; i < typesNode.length; i++) {
+                    if (typesNode[i].checked) {
+                        valueNode = typesNode[i].value
+                        break;
+                    }
+                }
+
+                var inputNode = document.getElementById("input_1");
+                //创建元素节点
+                var liNode = document.createElement("li");
+
+                //为新节点添加响应事件
+                liNode.onclick = showSmileSuffix;
+
+                /*   [\s]表示，只要出现空白就匹配
+
+                       [\S]表示，非空白就匹配
+                       */
+                //匹配空白
+                var reg = /^\s*|\s*/g;
+
+                //替换空格
+                var val = inputNode.value.replace(reg, "");
+
+                //创建文本节点
+                var textNode = document.createTextNode(val);
+                //为元素节点添加文本节点
+                liNode.appendChild(textNode);
+                var ulNode = document.getElementById(valueNode);
+                ulNode.appendChild(liNode);
+
+            }
+        }
+
+    </script>
+
+    </head>
+    <body>
+    <input type="radio" name="type" value="attractions"/>景点
+        <input type="radio" name="type" value="city"/>城市
+        <input type="text" size="40px" id="input_1" placeholder="把input中的内容作为节点添加到ul中"/>
+        <button id="bt_1">添加</button>
+        <br>
+        <b>景点</b>
+        <ul id="attractions">
+    <li>龙门石窟</li>
+    <li>洛阳牡丹</li>
+    <li>广东韶关丹霞山</li>
+</ul>
+<br>
+<b>城市</b>
+<ul id="city">
+    <li>河南</li>
+    <li>湖北</li>
+    <li>厦门</li>
+</ul>
+
+</body>
+</html>

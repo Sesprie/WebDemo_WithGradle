@@ -10,12 +10,12 @@
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="WebDemo_WithGradle_main" />
-    <orderEntry type="library" name="Gradle: javax.servlet:javax.servlet-api:3.0.1" level="project" />
-    <orderEntry type="library" name="Gradle: javax.servlet:jstl:1.2" level="project" />
+    <orderEntry type="library" name="Gradle: mysql:mysql-connector-java:8.0.13" level="project" />
     <orderEntry type="library" name="Gradle: org.apache.tomcat:tomcat-catalina:8.0.1" level="project" />
-    <orderEntry type="library" name="Gradle: org.apache.tomcat:jasper:6.0.32" level="project" />
+    <orderEntry type="library" name="Gradle: com.google.protobuf:protobuf-java:3.6.1" level="project" />
     <orderEntry type="library" name="Gradle: org.apache.tomcat:tomcat-jsp-api:8.0.1" level="project" />
     <orderEntry type="library" name="Gradle: org.apache.tomcat:tomcat-util-scan:8.0.1" level="project" />
+    <orderEntry type="library" scope="RUNTIME" name="Gradle: javax.servlet:jstl:1.2" level="project" />
     <orderEntry type="library" name="Gradle: org.apache.tomcat:tomcat-api:8.0.1" level="project" />
     <orderEntry type="library" name="Gradle: org.apache.tomcat:tomcat-coyote:8.0.1" level="project" />
     <orderEntry type="library" name="Gradle: org.apache.tomcat:tomcat-servlet-api:8.0.1" level="project" />
@@ -23,15 +23,7 @@
     <orderEntry type="library" name="Gradle: org.apache.tomcat:tomcat-juli:8.0.1" level="project" />
     <orderEntry type="library" name="Gradle: org.apache.tomcat:tomcat-annotations-api:8.0.1" level="project" />
     <orderEntry type="library" name="Gradle: org.apache.tomcat:tomcat-jni:8.0.1" level="project" />
-    <orderEntry type="library" name="Gradle: org.apache.tomcat:jsp-api:6.0.32" level="project" />
-    <orderEntry type="library" name="Gradle: org.apache.tomcat:catalina:6.0.32" level="project" />
-    <orderEntry type="library" name="Gradle: org.apache.tomcat:servlet-api:6.0.32" level="project" />
-    <orderEntry type="library" name="Gradle: org.apache.tomcat:juli:6.0.32" level="project" />
-    <orderEntry type="library" name="Gradle: org.apache.tomcat:jasper-el:6.0.32" level="project" />
-    <orderEntry type="library" name="Gradle: org.apache.tomcat:el-api:6.0.32" level="project" />
-    <orderEntry type="library" name="Gradle: org.eclipse.jdt.core.compiler:ecj:3.3.1" level="project" />
     <orderEntry type="library" name="Gradle: org.apache.tomcat:tomcat-el-api:8.0.1" level="project" />
-    <orderEntry type="library" name="Gradle: org.apache.tomcat:annotations-api:6.0.32" level="project" />
   </component>
   <component name="TestModuleProperties" production-module="WebDemo_WithGradle_main" />
 </module>

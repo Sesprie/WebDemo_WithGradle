@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ajax异步发送请求</title>
+</head>
+
+
+<script type="text/javascript">
+
+    var xmlHttpRequest = new XMLHttpRequest();
+    var flag = false;
+
+    function checkUserId(user_id) {
+        xmlHttpRequest.open("POST", "CheckServlet?user_id=" + user_id);
+        xmlHttpRequest.send(null);
+        //回调不可加括号
+        xmlHttpRequest.onreadystatechange = callback;
+        document.getElementById("msg").innerHTML = "正在验证...";
+
+    }
+
+    function callback() {
+        if (xmlHttpRequest.readyState == 4 && xmlHttpRequest.status == 200) {
+            //response的类型时文本
+            var res = xmlHttpRequest.response;
+            if (res == "true") {
+                document.getElementById("msg").innerHTML = "id重复，不可用";
+                flag = false;
+            } else {
+                //innerHTML不是函数，不能写成innerHTML("xxx");
+                document.getElementById("msg").innerHTML = "该id比较稀有";
+                flag = true;
+            }
+        }
+
+    }
+
+    /*    function checkUseridCallback()
+        {
+            if(xmlHttpRequest.readyState == 4)
+            {
+                if(xmlHttpRequest.status == 200){
+                    var text =xmlHttpRequest.responseText ;
+                    //alert(text);
+                    text=text.replace(/(^\s*)|(\s*$)/g,"");
+                    if(text=="true"){
+                        document.getElementById("msg").innerHTML = "ID重复，不能使用" ;
+                        flag = false ;
+                    } else {
+                        document.getElementById("msg").innerHTML = "可以使用" ;
+                        flag = true ;
+                    }
+                }
+            }
+        }*/
+
+
+    function checkForm() {
+        return flag;
+    }
+
+</script>
+
+<body>
+
+<form method="post" action="add.jsp" onsubmit="checkForm()">
+    用户ID:<input type="text" name="user_id" onblur="checkUserId(this.value)">&nbsp;&nbsp;<span id="msg"></span><br>
+    用户名:<input type="text" name="user_name"><br>
+    密码:<input type="password" name="user_pass"><br>
+    <input type="submit" value="提交">
+    <input type="reset" value="重置"><br>
+
+
+</form>
+
+
+</body>
+</html>

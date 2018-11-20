@@ -1,9 +1,0 @@
-<component name="libraryTable">
-  <library name="Gradle: org.apache.tomcat:jasper-el:6.0.32">
-    <CLASSES>
-      <root url="jar://$PROJECT_DIR$/../../../../../ProgramData/ENV_VAR/gradle-4.7-complete/caches/modules-2/files-2.1/org.apache.tomcat/jasper-el/6.0.32/b9cee6cd13caa752a0ed44b7218f39987601961c/jasper-el-6.0.32.jar!/" />
-    </CLASSES>
-    <JAVADOC />
-    <SOURCES />
-  </library>
-</component>

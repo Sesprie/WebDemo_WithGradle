@@ -13,18 +13,31 @@ repositories {
 }
 
 dependencies {
-    // https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api
-    compile group: 'javax.servlet', name: 'javax.servlet-api', version: '3.0.1'
-    //如果报错可以把providedCompile/compile换着用
+//    // https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api
+//    compile group: 'javax.servlet', name: 'javax.servlet-api', version: '3.0.1'
+//    //如果报错可以把providedCompile/compile换着用
+//
+////    providedCompile 'javax.servlet:servlet-api:2.5'
+//    runtime 'javax.servlet:jstl:1.2'
+//    // https://mvnrepository.com/artifact/javax.servlet/jstl
+////    runtime group: 'javax.servlet', name: 'jstl', version: '1.2'
+//    // https://mvnrepository.com/artifact/org.apache.tomcat/tomcat-catalina
+//    compile group: 'org.apache.tomcat', name: 'tomcat-catalina', version: '8.0.1'
+//    //每次从project structure添加本地tomcat依赖之后，该文件重新编译，依赖就会消失，
+//    //build就是来解决环境变化所带来的问题，如果添加本地tomcat依赖，需要指定tomcat所在的文件夹，如果环境变化需要重新指定，
+//    //如果直接使用一行代码来定位，下次可以直接下载即可，
+//    // https://mvnrepository.com/artifact/org.apache.tomcat/jasper
+////    providedCompile group: 'org.apache.tomcat', name: 'jasper', version: '6.0.32'
 
 
-    // https://mvnrepository.com/artifact/javax.servlet/jstl
-    compile group: 'javax.servlet', name: 'jstl', version: '1.2'
-    // https://mvnrepository.com/artifact/org.apache.tomcat/tomcat-catalina
+    /*gradle构建web项目https://lippiouyang.gitbooks.io/gradle-in-action-cn/content/first-project/web-development.html
+    * 在Project Structure中添加dependencies不会有任何效果(添加之后gradle会自动删除)，因为gradle构建的项目，依赖只从build.gradle项目导入，
+    * */
+
+
+    runtime 'javax.servlet:jstl:1.2'
     providedCompile group: 'org.apache.tomcat', name: 'tomcat-catalina', version: '8.0.1'
-    //每次从project structure添加本地tomcat依赖之后，该文件重新编译，依赖就会消失，
-    //build就是来解决环境变化所带来的问题，如果添加本地tomcat依赖，需要指定tomcat所在的文件夹，如果环境变化需要重新指定，
-    //如果直接使用一行代码来定位，下次可以直接下载即可，
-    // https://mvnrepository.com/artifact/org.apache.tomcat/jasper
-    providedCompile group: 'org.apache.tomcat', name: 'jasper', version: '6.0.32'
+    // https://mvnrepository.com/artifact/mysql/mysql-connector-java
+    compile group: 'mysql', name: 'mysql-connector-java', version: '8.0.13'
+
 }

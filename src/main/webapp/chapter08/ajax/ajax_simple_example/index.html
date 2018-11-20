@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>利用ajax动态改变innerHTML内容</title>
+
+    <script type="text/javascript">
+
+window.onload = function(){
+    var aNodes = document.getElementsByTagName("a");
+    for(var i = 0; i < aNodes.length; i++){
+        aNodes[i].onclick = function(){
+            var request = new XMLHttpRequest();
+            request.open("GET", this.href+"?time=" + new Date());
+            request.send(null);
+            request.onreadystatechange = function(){
+                if(request.readyState == 4 && (request.status == 200 || request.status == 304)){
+                    // alert(request.responseText);
+                    document.getElementById("details").innerHTML = request.responseText;
+                }
+            }
+
+            return false;
+        }
+    }
+}
+
+    </script>
+
+</head>
+
+
+
+
+<body>
+<ul>
+    <li><a href="google.html">Google</a></li>
+    <li><a href="twitter.html">Twitter</a></li>
+    <li><a href="youtube.html">Youtube</a></li>
+</ul>
+<div id="details"></div>
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+        window.onload = function () {
+
+
+
+
+
+            //利用正则，添加删除字符串
+            //'//g'包裹正则表达式，^表示开头，\^{2}表示匹配两个^，\表示对^进行转义，^不再表示开头
+            var reg = /^\^{2}/g;
+            var lis = document.getElementsByTagName("li");
+            for (var i = 0; i < lis.length; i++) {
+                lis[i].onclick = function () {
+                    var val = this.textContent;
+                    /*       var val = this.firstChild.nodeValue;*/
+                    if (reg.test(val)) {
+                        //使用replace和正则去除^^
+                        val = val.replace(reg, "");
+                        /*this.textContent = this.textContent.replace("^^","");*/
+                    } else {
+                        val = "^^" + val;
+                    }
+                    this.textContent = val;
+                }
+            }
+
+
+            //元素节点
+            var lmskNode = document.getElementById("lmsk");
+            alert(lmskNode.nodeType);//1
+            alert(lmskNode.nodeName);//li
+            alert(lmskNode.nodeValue);//元素节点没有nodeValue属性值
+           /* alert(lmskNode.firstChild.nodeValue);//firstChild表示lsmkNode中的文本节点*/
+
+            //属性节点
+            var attrNode = document.getElementById("input1").getAttributeNode("name");
+            alert(attrNode.nodeType);//2
+            alert(attrNode.nodeName);//name
+            alert(attrNode.nodeValue);//username
+
+
+            //文本节点
+            var textNode = lmskNode.firstChild;
+            alert(textNode.nodeType);//3
+            alert(textNode.nodeName);//text
+            alert(textNode.nodeValue);//文本节点本身
+
+
+            //nodeType, nodeName, 只读
+            //nodeValue在文本节点中使用的是最多的
+
+
+
+            var bt = document.getElementById("append_li");
+            bt.onclick = function(){
+                //创建一个元素节点<li></li>
+                var liNode = document.createElement("li");
+
+                //创建一个文本节点，并添加到liNode，<li>巴厘岛 情人崖</li>
+                var textNode = document.createTextNode("巴厘岛 情人崖");
+                liNode.appendChild(textNode);
+
+                var ulNode = document.getElementById("ul1");
+                ulNode.appendChild(liNode);
+            }
+
+
+
+        }
+
+
+    </script>
+</head>
+<body>
+<ul id="ul1">
+    <li id="lmsk">龙门石窟</li>
+    <li>洛阳牡丹</li>
+    <li>广东韶关丹霞山</li>
+</ul>
+
+
+<input type="text" name="username" id="input1"/>
+<button id="append_li">点击为ul添加一个节点</button>
+</body>
+</html>
