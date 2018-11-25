@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>实现节点的互换</title>
+
+
+    <script type="text/javascript">
+        window.onload = function(){
+
+            replaceEachOtherSpecNode();
+
+
+            var bt_1 = document.getElementById("bt_1");
+            bt_1.onclick = function(){
+
+                var lmskNode = document.getElementById("lmsk");
+                var hnNode = document.getElementById("hn");
+                /*后面的点击事件时根据index来确定的，所以需要更换index*/
+                var tmp_index = lmskNode.index;
+                lmskNode.index = hnNode.index;
+                hnNode.index = tmp_index;
+                replaceEachOther(lmskNode,hnNode);
+            }
+
+
+
+
+
+            /**
+             * 点击节点时，与对应位置的节点交换
+             */
+            function replaceEachOtherSpecNode(){
+                var liNodes = document.getElementsByTagName("li");
+                for(var i = 0; i < liNodes.length; i++){
+                    //为每个li设置index，因为当for循环结束i的值已经变成了length+1，不可用户标记当前节点
+                    liNodes[i].index = i;
+                    liNodes[i].onclick = function(){
+                        var targetIndex = this.index + Math.floor(liNodes.length/2);
+                        if(liNodes[targetIndex] != null){
+                            /*交换index，使onclick事件在交换之后继续生效*/
+                            var tmp_index = this.index;
+                            this.index = targetIndex;
+                            liNodes[targetIndex].index = tmp_index;
+                            replaceEachOther(this,liNodes[targetIndex]);
+                        }
+                    }
+                }
+            }
+
+
+
+
+
+            /**
+             * 互换节点
+             */
+            function replaceEachOther(node1, node2){
+                var node1Parent = node1.parentNode;
+                var node2Parent = node2.parentNode;
+
+                /**
+                 * cloneNode(boolean deep)
+                 Returns a duplicate of this node, i.e., serves as a generic copy constructor for nodes.
+                 因为replaceChild会移动走节点，所以先需要拷贝节点，
+                 如果先使用hnNode，hnNode会被移动走，再想替换hnNode就找不到原来的位置了
+                 */
+                var node1_clone = node1.cloneNode(true);
+                /*克隆时连带onclick事件一起走*/
+                node1_clone.onclick = node1.onclick;
+                /**
+                 * Node.replaceChild(     newChild: Node,     oldChild: T): T
+                 * replaceChild(a,b)
+                 * replaceChild(b,a)
+                 * 如果容易弄混，先写出来，再把第一个a或者b替换成它的克隆就可以了
+                 * replaceChild相当于将node1移动到node2的位置，所以先clone一份Node，先使用这份被克隆的Node
+                 */
+                node2Parent.replaceChild(node1_clone,node2);
+                node1Parent.replaceChild(node2,node1);
+
+            }
+
+
+        }
+
+
+    </script>
+
+</head>
+<body>
+<button id="bt_1">互换第一个节点</button>
+<span>点击对应的节点可互换</span>
+<br>
+<b>景点</b>
+<ul id="attractions">
+    <li id="lmsk">龙门石窟</li>
+    <li>洛阳牡丹</li>
+    <li>广东韶关丹霞山</li>
+</ul>
+<br>
+<b>城市</b>
+<ul id="city">
+    <li id="hn">河南</li>
+    <li>湖北</li>
+    <li>厦门</li>
+</ul>
+</body>
+</html>

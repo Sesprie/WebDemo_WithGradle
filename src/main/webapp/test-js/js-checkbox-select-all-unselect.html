@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>全选，全不选，反选 checkbox</title>
+
+    <script type="text/javascript">
+        window.onload = function () {
+            var checkbox_all = document.getElementById("checkbox_all");
+
+
+
+            //给全选checkbox设置点击事件
+            checkbox_all.onclick = function () {
+                var items = document.getElementsByName("items");
+                //如果被选中则全选所有checkbox，这里只有两种可能，不用if...else...
+                for (var i = 0; i < items.length; i++) {
+                    items[i].checked = this.checked;
+                }
+            };
+
+
+            var items = document.getElementsByName("items");
+            //给所有的checkbox设置监听事件，只要有一个没有被选中，则全选checkbox不被选中
+            for (var i = 0; i < items.length; i++) {
+                items[i].onclick = function () {
+
+                    //alert(this.checked);   此时的值是点击之后的值不是当前显示的值
+
+                    //每个checkbox被点击时遍历所有checkbox，判断是否被全选
+                    for(var j = 0; j < items.length; j++){
+                        if(!items[j].checked) {
+                            //有一个没有被选中就取消勾选checkbox_all
+                            checkbox_all.checked = false;
+                            return ;//如果这里return false，就会导致当前的checkbox无法改变状态
+                            //break无法跳出当前for循环，只跳出了if语句
+                        }
+                    }
+                    checkbox_all.checked = true;
+                }
+
+            }
+
+            //反选
+            document.getElementById("select_reverse").onclick = function(){
+                checkbox_all.checked = true;
+                var items = document.getElementsByName("items");
+                for(var i = 0; i < items.length; i++){
+                    items[i].checked = !items[i].checked;
+                    //有一个没有被选中就设置checkbox_all为false
+                    if(!items[i].checked){
+                         checkbox_all.checked = false;
+                    }
+                }
+            }
+
+
+        }
+
+    </script>
+
+
+</head>
+
+
+<body>
+
+<form action="#">
+
+    你的爱好是？<input type="checkbox" id="checkbox_all">全选/全不选<br>
+    <input type="checkbox" name="items" value="足球">足球
+    <input type="checkbox" name="items" value="羽毛球">羽毛球
+    <input type="checkbox" name="items" value="篮球">篮球
+    <input type="checkbox" name="items" value="网球">网球<br>
+
+    <input type="button" id="select_all" value="全选">
+    <input type="button" value="全不选">
+    <input type="button" id="select_reverse"  value="反选">
+    <input type="submit">
+
+
+</form>
+
+
+</body>
+</html>

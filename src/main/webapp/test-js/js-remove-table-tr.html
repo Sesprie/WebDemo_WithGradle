@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>删除table的一行</title>
+    <script type="text/javascript">
+/**
+ * 内容都比较简单，用起来才是你的，不用起来永远不是你的
+ */
+        window.onload = function(){
+            /**
+             * value和nodeValue的区别，nodeValue用于文本节点，返回其内容，也就是文本节点本身，而value是属性，例如返回input的value属性，其次如果想给value属性赋值
+             * 需要先给input添加value节点
+             * innerHTML会返回节点内的内容
+             *
+             * @type {HTMLElement}
+             */
+
+
+            var bt_add = document.getElementById("bt_add");
+            bt_add.onclick = function(){
+                var tb_01 = document.getElementById("tb_01");
+                tb_01.appendChild(getTrNode());
+            }
+
+
+            function getTrNode(){
+                var input_name = document.getElementById("name").value;
+                var input_email = document.getElementById("email").value;
+                var input_salary = document.getElementById("salary").value;
+
+                var td_name = getTdNode(input_name);
+                var td_email = getTdNode(input_email);
+                var td_salary = getTdNode(input_salary);
+
+                var aNode = document.createElement("a");
+                aNode.onclick = function(){
+                    var flag = confirm("确定删除吗");
+                    if(flag){
+                        removeThisLine(this);
+                    }
+                    //不让a标签的连接发生跳转
+                    return false;
+                }
+                aNode.name="delete";
+                aNode.href="#";
+                var text_node = document.createTextNode("Delete");
+                aNode.appendChild(text_node);
+                var td_a = document.createElement("td");
+                td_a.appendChild(aNode);
+
+                var tr_new = document.createElement("tr");
+                tr_new.appendChild(td_name);
+                tr_new.appendChild(td_email);
+                tr_new.appendChild(td_salary)
+                tr_new.appendChild(td_a);
+                return tr_new;
+
+            }
+
+            function getTdNode(val){
+                var td_node = document.createElement("td");
+                var td_textNode = document.createTextNode(val);
+                td_node.appendChild(td_textNode);
+                return td_node;
+
+            }
+
+            var aNodes = document.getElementsByName("delete");
+            for(var i = 0; i < aNodes.length; i++){
+                aNodes[i].onclick = function(){
+                    var flag = confirm("确定删除吗");
+                    if(flag){
+                        removeThisLine(this);
+                    }
+                    //不让a标签的连接发生跳转
+                    return false;
+                }
+            }
+
+
+            //删除当前标签所在的行
+            function removeThisLine(node){
+                var node_tr = node.parentNode.parentNode;
+                node_tr.parentNode.removeChild(node_tr);
+            }
+        }
+
+
+    </script>
+    <style type="text/css">
+        .align_{
+            text-align: right;
+        }
+        
+    </style>
+</head>
+<body>
+<center>
+    <div>
+        Name:
+        <input type="text" id="name"><br>
+        Email:
+        <input type="text" id="email"><br>
+        Salary:
+        <input type="text" id="salary"><br>
+        <button id="bt_add">Add</button>
+
+    </div>
+    <br>
+    <hr/>
+    <table border="1" cellspacing="0" cellpadding="5">
+        <tbody id="tb_01">
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Salary</th>
+                <th>&nbsp;</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>2</td>
+                <td>3dddddddddddddddddddddddddddddd</td>
+                <td><a href="#" name="delete">Delete</a></td>
+            </tr>
+            <tr></tr>
+        </tbody>
+    </table>
+</center>
+</body>
+</html>

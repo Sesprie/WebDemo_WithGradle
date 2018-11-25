@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jquery，全选，全不选，反选</title>
+
+<!--
+
+attribute   property
+$('.checkbox').attr('checked',true);
+will not work with from jQuery 1.6.
+Instead use
+$('.checkbox').prop('checked',true);
+$('.checkbox').prop('checked',false);
+
+
+-->
+    <script type="text/javascript" src="lib/jquery-3.3.1.js"></script>
+    <script type="text/javascript">
+        /**
+         * jquery1.6之后attr方法就不再被支持了，被prop替代了
+         * $(function(){})相当于window.onload
+         */
+        $(function(){
+
+            //$("button")会选择所有button
+            $("button").click(function(){
+                alert("Hello");
+            });
+
+
+            $("#checkbox_all").click(function(){
+                var flag = this.checked;
+                //但是很奇怪，这里又可以使用
+                $(":checkbox[name='items']").attr("checked", flag);
+            });
+
+            $(":checkbox[name='items']").click(function(){
+
+                /**
+                 * 这里无法使用
+                 * $("#checkbox_all").attr("checked",false);
+                 */
+                var flag = $(":checkbox[name='items']:checked").length === $(":checkbox[name='items']").length;
+                $("#checkbox_all").prop("checked",flag);
+            })
+
+        });
+
+
+    </script>
+
+</head>
+<body>
+
+<form action="#">
+
+    你的爱好是？<input type="checkbox" id="checkbox_all">全选/全不选<br>
+    <input type="checkbox" name="items" value="足球">足球
+    <input type="checkbox" name="items" value="羽毛球">羽毛球
+    <input type="checkbox" name="items" value="篮球">篮球
+    <input type="checkbox" name="items" value="网球">网球<br>
+
+    <input type="button" id="select_all" value="全选">
+    <input type="button" value="全不选">
+    <input type="button" id="select_reverse"  value="反选">
+    <input type="submit">
+
+
+</form>
+<button>click me</button>
+
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM对象和jquery对象的相互转换</title>
+    <!--这里不能写成单标签<script/>-->
+    <script type="text/javascript" src="lib/jquery-3.3.1.js"></script>
+    <script type="text/javascript">
+                $(function(){
+
+                    //DOM对象转换为jquery对象
+                    $("button").click(function(){
+                        var span_Node = document.getElementsByTagName("span")[0];
+                        alert("DOM对象转换为jquery对象:" + $(span_Node).text());
+
+
+                        //jquery对象转换为DOM对象，jquery对象是数组，用下标访问
+                        $("span").length;
+                var dom_span = $("span")[0];
+                alert("jquery对象转换为DOM对象:"+dom_span.firstChild.nodeValue);
+
+
+            })
+
+
+
+        })
+    </script>
+
+
+</head>
+<body>
+
+<button>click me 1</button>
+<span>jquery</span>
+<button>click me 2</button>
+</body>
+</html>

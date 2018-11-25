@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jquery选择器</title>
+
+    <style type="text/css">
+
+        div.mini {
+            width: 55px;
+            height: 55px;
+            background-color: #aaa;
+            font-size: 12px;
+        }
+
+        div.hide {
+            display: none;
+        }
+
+    </style>
+
+
+    <script type="text/javascript" src="lib/jquery-3.3.1.js"></script>
+    <script type="text/javascript">
+        /**
+         * 后代元素和子元素的区别
+         * 后代元素，例如body内的所有元素都是其后代元素
+         * 子元素就是某个节点的直接元素，
+         * 例如
+         * <body>
+         *     <ul>
+         *         <li></li>
+         *     </ul>
+         *     <a></a>
+         * </body>
+         * a和ul是都是body的子元素，
+         * a，ul，所有的li  都是body的后代元素
+         * 豆沙色#c7edcc
+         * */
+        $(function () {
+
+
+            //使#h2_01不停的上下滑动
+            function animatedIt() {
+                //传入自身，实现递归，使其不停的滑动
+                $("#h2_01").slideToggle("slow", animatedIt);
+
+            }
+            animatedIt();
+
+            $("#btn_01").click(function () {
+                $("body *").css("background", "#c7edcc");
+            });
+
+
+            $("#btn_02").click(function () {
+                $("body li").css("background", "#ed221c");
+            });
+
+            $("#btn_03").click(function () {
+                $("body > li").css("background", "#19ed00");
+            });
+
+            //选择与ul相邻的下一个p元素，
+            $("#btn_04").click(function () {
+                $("ul + p").css("background", "#ff22a3");
+            });
+
+
+            //siblings()可以选择所有的同辈元素
+            //ul ~ p选择ul后所有的同辈p元素
+            $("#btn_05").click(function () {
+                $("ul ~ p").css("background", "#ff8c05");
+            });
+
+
+            $("#btn_06").click(function () {
+                $("*").css("background", "#b30fff");
+            });
+
+
+            //siblings可以选择一个元素的所有指定类型的兄弟，如果不指定，就是所有兄弟
+            $("#btn_07").click(function () {
+                $("#li_one").siblings("p").css("background", "#86ffcf");
+            });
+
+
+            $("#btn_08").click(function () {
+                //如果元素已经显示，再使用slidedown没有效果，这里使用的先隐藏再滑动显示
+                $("p").hide().slideDown(600);
+            });
+
+
+            $("#btn_09").click(function () {
+                $("#li_one,span").css("background", "#fff784");
+            });
+
+            //选择与ul后的第一个a元素
+            $("#btn_10").click(function () {
+                $("ul").nextAll("a:first").css("background", "#c6ff06");
+            });
+
+            $("#btn_11").click(function () {
+                $("li:not(#li_one)").css("background", "#ff0b00");
+            });
+
+
+            $("#btn_12").click(function () {
+                $("li:last").css("background", "#0073ff");
+            });
+
+
+            $("#btn_13").click(function () {
+                $("li:odd").css("background", "#ff7700");
+            });
+
+            $("#btn_14").click(function () {
+                $("li:gt(3)").css("background", "#ff7700");
+            });
+            $("#btn_14").click(function () {
+                $("li:gt(3)").css("background", "#212121");
+            });
+
+
+            $("#btn_15").click(function () {
+                $(":header").css("background", "#ff7700");
+            });
+            $("#btn_16").click(function () {
+                $(":animated").css("background", "#ff7700");
+            });
+
+            $("#btn_17").click(function () {
+                $(":empty").css("background", "#ff7700");
+            });
+
+            $("#btn_18").click(function () {
+                // $("div:parent").css("background","#ff7700");
+                $("div:not(:empty)").css("background", "#ff7700");
+            });
+
+            $("#btn_19").click(function () {
+                //如果:hidden前面不加div，那么会把网页源码显示出来，诡异.....
+                $("div:hidden").show(1000).css("background", "#ff7700");
+            });
+
+            $("#btn_20").click(function () {
+                //.attr()方法被废弃
+                //.val返回对象的value属性值，前提是有这个属性值
+                // $("#h1_01").text($("input:hidden").val()).css("background","#ff7700");
+                $("#h1_01").text($("input:hidden").prop("value")).css("background", "#ff7700");
+            });
+            $("#btn_21").click(function () {
+                //选取有title属性的所有元素
+                $("*[title]").css("background", "#ff7700");
+                /*$("div:not(:animated)").animate({ right: "+=20" }, 1000);*/
+
+            });
+            $("#btn_22").click(function () {
+                $(":header[title!='test']").css("background", "#ff7700");
+            });
+            $("#btn_23").click(function () {
+                $("*[title^='h']").css("background", "#ff7700");
+            });
+            $("#btn_24").click(function () {
+                $("*[title$='est']").css("background", "#ff7700");
+            });
+            $("#btn_25").click(function () {
+                $("*[title*='_tes']").css("background", "#ff7700");
+            });
+
+            $("#btn_26").click(function () {
+                $(":header[title][id$=_01]").css("background", "#ff7700");
+            });
+
+
+        })
+    </script>
+</head>
+<body>
+<button id="btn_01">选择body的所有子代元素</button>
+<button id="btn_02">选择body的所有li后代元素</button>
+<button id="btn_03">选择body的所有li子代元素</button>
+<button id="btn_04">选择与任何一个ul相邻的下一个p元素</button>
+<button id="btn_05">选择ul后所有的sibling p元素(即兄弟关系的p元素)</button>
+<button id="btn_06">选择所有元素</button>
+<button id="btn_07">选择#li_one的所有p元素兄弟</button>
+<button id="btn_08">以slideDown的方式显示所有的p元素</button>
+<button id="btn_09">并集选择器，选择id为li_one的和span元素</button>
+<button id="btn_10">选择ul后第一个a元素(无论是否相邻)</button>
+<button id="btn_11">选择id不为li_one的li元素</button>
+<button id="btn_12">选择最后一个li元素</button>
+<button id="btn_13">选择index为奇数的li元素</button>
+<button id="btn_14">选择index大于3的li元素</button>
+<button id="btn_15">选择所有标题元素</button>
+<button id="btn_16">选择正在执行动画的元素</button>
+<button id="btn_17">选择不包含任何元素的div元素</button>
+<button id="btn_18">选择非空的div</button>
+<button id="btn_19">选择隐藏的div</button>
+<button id="btn_20">将隐藏的input的值设置到h1标题中</button>
+<button id="btn_21">选取有title属性的所有元素</button>
+<button id="btn_22">选取title属性不为test的标题元素</button>
+<button id="btn_23">选取title属性以h开始的元素</button>
+<button id="btn_24">选取title属性以est结尾的元素</button>
+<button id="btn_25">选取title属性含有_tes的元素</button>
+<button id="btn_26">选取有title属性且id以_01结尾的元素</button>
+
+
+<li id="li_one">0 我是li元素，我的id为li_one，我的index为0</li>
+
+<p>我是p元素，下面的是ul</p>
+<ul>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+</ul>
+<p>我是p元素</p>
+<a>我是a元素</a>
+<p>我是p元素 + 1</p>
+<span>我是span元素，下面的是ul</span>
+<ul>
+    <li>4</li>
+    <li>5</li>
+    <li>6</li>
+</ul>
+<div class="mini">非空</div>
+<br>
+<div class="hide mini">隐藏的的div</div>
+<br>
+<div class="hide mini">隐藏的div</div>
+<p>我是p元素</p>
+<h1 id="h1_01" title="test">h1_01，title属性为test</h1>
+<div class="mini"></div>
+
+
+
+<h2 id="h2_02" title="h1_test">h2_02，title属性为h1_test</h2>
+<h2 id="h2_01" title="h2_test">h2_01，title属性为h2_test</h2>
+
+<input value="张三" type="hidden">
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>在节点之前/之后插入节点</title>
+
+
+    <script type="text/javascript">
+
+
+        window.onload = function () {
+
+            var bt_01 = document.getElementById("bt_01");
+
+            var lmskNode = document.getElementById("lmsk");
+            var hnNode = document.getElementById("hn");
+            bt_01.onclick = function(){
+                var attractionsNode = document.getElementById("attractions");
+
+                //将hnNode插入到lmskNode之前，该方法是 直接移动
+                attractionsNode.insertBefore(hnNode,lmskNode);
+            }
+
+
+            bt_02.onclick = function(){
+
+                //将hnNode插入到lmskNode的后面
+                insertAfter(hnNode,lmskNode);
+            }
+
+
+            //没有insertBefore方法，自己实现，主要使用nextSibling和lastChild
+            function insertAfter(newNode, refNode){
+                var refNodeParent = refNode.parentNode;
+                if(refNodeParent){
+                    var ref_lastChild = refNodeParent.lastChild;
+                    if(ref_lastChild == refNode){
+                        refNodeParent.appendChild(newNode);
+
+                    }else{
+                        var ref_silbingNode = refNode.nextSibling;
+                        refNodeParent.insertBefore(newNode, ref_silbingNode);
+                    }
+                }
+
+            }
+
+        }
+
+    </script>
+
+</head>
+<body>
+<button id="bt_01">在'龙门石窟'之前插入</button>
+<button id="bt_02">在'龙门石窟'之后插入</button>
+
+<br>
+<b>景点</b>
+<ul id="attractions">
+    <li id="lmsk">龙门石窟</li>
+    <li>洛阳牡丹</li>
+    <li>广东韶关丹霞山</li>
+</ul>
+<br>
+<b>城市</b>
+<ul id="city">
+    <li id="hn">河南</li>
+    <li>湖北</li>
+    <li>厦门</li>
+</ul>
+
+</body>
+</html>
